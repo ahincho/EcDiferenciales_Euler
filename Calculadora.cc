@@ -20,13 +20,14 @@ double Calculadora::segundaDerivada(double x, double y, double dy)
 double Calculadora::metodoEuler(double x0, double h, double xf, double y0, double dy0, double d2y0)
 {
     int controlPrint = 0;
+    int factor = 1 / h;
     while (x0 <= xf)
     {
         x0 += h;
         y0 += h * dy0;
         dy0 += h * d2y0;
         d2y0 = segundaDerivada(x0, y0, dy0);
-        if(controlPrint % 100 == 0)
+        if(controlPrint % factor == 0)
         {
             printInfo(controlPrint, x0, y0, dy0, d2y0);
         }
