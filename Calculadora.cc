@@ -5,8 +5,8 @@
 
 double Calculadora::funcionF(double x)
 {
-    // Funcion f(x) = 1 + 2x
-    return (1 + 2 * x);
+    // Funcion f(x) = 0
+    return 0;
 }
 
 double Calculadora::segundaDerivada(double x, double y, double dy)
