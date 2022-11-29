@@ -5,7 +5,8 @@
 
 double Calculadora::funcionF(double x)
 {
-    return 1 + 2 * x;
+    // Funcion f(x) = 1 + 2x
+    return (1 + 2 * x);
 }
 
 double Calculadora::segundaDerivada(double x, double y, double dy)
@@ -19,7 +20,6 @@ double Calculadora::segundaDerivada(double x, double y, double dy)
 double Calculadora::metodoEuler(double x0, double h, double xf, double y0, double dy0, double d2y0)
 {
     int controlPrint = 0;
-    printInfo(controlPrint, x0, y0, dy0, d2y0);
     while (x0 <= xf)
     {
         x0 += h;
@@ -36,11 +36,11 @@ double Calculadora::metodoEuler(double x0, double h, double xf, double y0, doubl
     return y0;
 }
 
-double Calculadora::solucionGeneral(double p, double xf)
+double Calculadora::solucionGeneral(double yp, double xf)
 {
     // Cuando: a(x)y'' + b(x)y' + c(x)y = f(x)
     // Entonces la solucion general es y = yh + yp
-    return p + funcionF(xf);
+    return yp + funcionF(xf);
 }
 
 void Calculadora::printInfo(int i, double x, double y, double dy, double d2y) {
